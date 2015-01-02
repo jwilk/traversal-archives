@@ -3,33 +3,30 @@
 all: absolute.zip absolute2.zip symlink.zip dirsymlink.zip
 
 absolute.zip:
-	rm -rf mooo
 	umask 022 && echo moo > mooo
 	zip -X $(@) mooo
-	rm -rf mooo
+	rm -f mooo
 	sed -i -e s,mooo,/moo, $(@)
 
 absolute2.zip:
-	rm -rf mooo
 	umask 022 && echo moo > moooo
 	zip -X $(@) moooo
-	rm -rf moooo
+	rm -f moooo
 	sed -i -e s,moooo,//moo, $(@)
 
 symlink.zip:
-	rm -rf moo
 	ln -sf /tmp/moo moo
 	zip -X -y $(@) moo
-	rm -rf moo
+	rm -f moo
 	umask 022 && echo moo > zoo
 	zip -X $(@) zoo
 	sed -i -e s/zoo/moo/ $(@)
-	rm -rf zoo
+	rm -f zoo
 
 dirsymlink.zip:
 	ln -sf /tmp tmp
 	zip -X -y $(@) tmp
-	rm -rf tmp
+	rm -f tmp
 	mkdir -m 755 tmp
 	umask 022 && echo moo > tmp/moo
 	zip -X $(@) tmp/moo
