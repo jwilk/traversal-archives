@@ -1,5 +1,5 @@
-Directory traversal samples for ZIP extractors
-==============================================
+Directory traversal samples for archive extractors
+==================================================
 
 absolute::
 
