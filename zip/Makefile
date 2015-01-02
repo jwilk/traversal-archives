@@ -11,15 +11,15 @@ else
 
 all: absolute.zip
 absolute.zip:
-	umask 022 && echo moo > mooo
-	zip -X -m $(@) mooo
-	sed -i -e s,mooo,/moo, $(@)
+	umask 022 && echo moo > mooooooo
+	zip -X -m $(@) mooooooo
+	sed -i -e s,mooooooo,/tmp/moo, $(@)
 
 all: absolute2.zip
 absolute2.zip:
-	umask 022 && echo moo > moooo
-	zip -X -m $(@) moooo
-	sed -i -e s,moooo,//moo, $(@)
+	umask 022 && echo moo > moooooooo
+	zip -X -m $(@) moooooooo
+	sed -i -e s,moooooooo,//tmp/moo, $(@)
 
 all: relative.zip
 relative.zip:
