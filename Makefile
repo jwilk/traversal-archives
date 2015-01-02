@@ -1,7 +1,7 @@
 .PHONY: all clean
 
-include zip.mk
 include tar.mk
+include zip.mk
 
 .PHONY: clean
 clean:
