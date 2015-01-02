@@ -1,5 +1,5 @@
-Directory traversal samples for archive extractors
-==================================================
+Archive samples for testing against directory traversals
+========================================================
 
 absolute::
 
