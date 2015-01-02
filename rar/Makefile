@@ -1,5 +1,12 @@
+.PHONY: all
+all:
+
+.PHONY: clean
+clean:
+	rm -rf *.rar tmp* moo*
+
 ifeq "$(shell which rar)" ""
-$(warning rar(1) is needed to create RAR samples)
+$(error rar(1) is needed to create RAR samples)
 else
 
 all: absolute.rar
@@ -50,12 +57,6 @@ dirsymlink.rar:
 	umask 022 && echo moo > tmp/moo
 	rar a $(@) tmp/moo
 	rm -rf tmp
-
-clean: clean-rar
-
-.PHONY: clean-rar
-clean-rar:
-	rm -rf *.rar
 
 endif
 

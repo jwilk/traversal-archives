@@ -1,7 +1,14 @@
 export TAR = bsdtar -P --uid=0 --gid=0
 
+.PHONY: all
+all:
+
+.PHONY: clean
+clean:
+	rm -rf *.tar tmp* moo*
+
 ifeq "$(shell which bsdtar)" ""
-$(warning bsdtar(1) is needed to create TAR samples)
+$(error bsdtar(1) is needed to create TAR samples)
 else
 
 all: absolute.tar
@@ -42,12 +49,6 @@ dirsymlink.tar:
 	umask 022 && echo moo > tmp/moo
 	$(TAR) -rf $(@) tmp/moo
 	rm -rf tmp
-
-clean: clean-tar
-
-.PHONY: clean-tar
-clean-tar:
-	rm -rf *.tar
 
 endif
 

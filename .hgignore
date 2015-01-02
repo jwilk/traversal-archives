@@ -1,5 +1,5 @@
 syntax: glob
 
-*.rar
-*.tar
-*.zip
+rar/*.rar
+tar/*.tar
+zip/*.zip

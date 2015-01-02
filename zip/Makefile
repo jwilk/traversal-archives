@@ -1,5 +1,12 @@
+.PHONY: all
+all:
+	
+.PHONY: clean
+clean:
+	rm -rf *.zip tmp* moo* zoo*
+	
 ifeq "$(shell which zip)" ""
-$(warning zip(1) is needed to create TAR samples)
+$(error zip(1) is needed to create TAR samples)
 else
 
 all: absolute.zip
@@ -49,12 +56,6 @@ dirsymlink.zip:
 	umask 022 && echo moo > tmp/moo
 	zip -X $(@) tmp/moo
 	rm -rf tmp
-
-clean: clean-zip
-
-.PHONY: clean-zip
-clean-zip:
-	rm -rf *.zip
 
 endif
 
