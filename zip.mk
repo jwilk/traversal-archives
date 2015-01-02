@@ -1,3 +1,7 @@
+ifeq "$(which zip)" ""
+$(warning zip(1) is needed to create TAR samples)
+else
+
 all: absolute.zip
 absolute.zip:
 	umask 022 && echo moo > mooo
@@ -51,5 +55,7 @@ clean: clean-zip
 .PHONY: clean-zip
 clean-zip:
 	rm -rf *.zip
+
+endif
 
 # vim:ts=4 sts=4 sw=4 noet

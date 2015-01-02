@@ -1,5 +1,9 @@
 export TAR = bsdtar -P --uid=0 --gid=0
 
+ifeq "$(which bsdtar)" ""
+$(warning bsdtar(1) is needed to create TAR samples)
+else
+
 all: absolute.tar
 absolute.tar:
 	umask 022 && echo moo > moo
@@ -44,5 +48,7 @@ clean: clean-tar
 .PHONY: clean-tar
 clean-tar:
 	rm -rf *.tar
+
+endif
 
 # vim:ts=4 sts=4 sw=4 noet
