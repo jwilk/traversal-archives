@@ -12,15 +12,13 @@ else
 all: absolute.zip
 absolute.zip:
 	umask 022 && echo moo > mooo
-	zip -X $(@) mooo
-	rm -f mooo
+	zip -X -m $(@) mooo
 	sed -i -e s,mooo,/moo, $(@)
 
 all: absolute2.zip
 absolute2.zip:
 	umask 022 && echo moo > moooo
-	zip -X $(@) moooo
-	rm -f moooo
+	zip -X -m $(@) moooo
 	sed -i -e s,moooo,//moo, $(@)
 
 all: relative.zip
@@ -40,18 +38,15 @@ relative2.zip:
 all: symlink.zip
 symlink.zip:
 	ln -sf /tmp/moo moo
-	zip -X -y $(@) moo
-	rm -f moo
+	zip -X -y -m $(@) moo
 	umask 022 && echo moo > zoo
-	zip -X $(@) zoo
+	zip -X -m $(@) zoo
 	sed -i -e s/zoo/moo/ $(@)
-	rm -f zoo
 
 all: dirsymlink.zip
 dirsymlink.zip:
 	ln -sf /tmp tmp
-	zip -X -y $(@) tmp
-	rm -f tmp
+	zip -X -y -m $(@) tmp
 	mkdir -m 755 tmp
 	umask 022 && echo moo > tmp/moo
 	zip -X $(@) tmp/moo
