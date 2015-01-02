@@ -1,6 +1,20 @@
 .PHONY: all
 
-all: symlink.zip dirsymlink.zip
+all: absolute.zip absolute2.zip symlink.zip dirsymlink.zip
+
+absolute.zip:
+	rm -rf mooo
+	umask 022 && echo moo > mooo
+	zip -X $(@) mooo
+	rm -rf mooo
+	sed -i -e s,mooo,/moo, $(@)
+
+absolute2.zip:
+	rm -rf mooo
+	umask 022 && echo moo > moooo
+	zip -X $(@) moooo
+	rm -rf moooo
+	sed -i -e s,moooo,//moo, $(@)
 
 symlink.zip:
 	rm -rf moo
