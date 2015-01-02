@@ -37,6 +37,6 @@ dirsymlink.zip:
 
 .PHONY: clean
 clean:
-	rm -f *.zip moo* zoo*
+	rm -rf *.zip tmp* moo* zoo*
 
 # vim:ts=4 sw=4 noet
