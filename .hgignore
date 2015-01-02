@@ -1,4 +1,5 @@
 syntax: glob
 
+*.rar
 *.tar
 *.zip

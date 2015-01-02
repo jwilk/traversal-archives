@@ -2,6 +2,7 @@
 
 all:
 
+include rar.mk
 include tar.mk
 include zip.mk
 
