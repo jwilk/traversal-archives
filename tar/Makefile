@@ -8,7 +8,7 @@ clean:
 	rm -rf *.tar tmp* moo*
 
 ifeq "$(shell which bsdtar)" ""
-$(error bsdtar(1) is needed to create TAR samples)
+$(error bsdtar(1) is needed to create tar samples)
 else
 
 all: absolute.tar
