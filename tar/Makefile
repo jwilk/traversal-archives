@@ -14,7 +14,7 @@ else
 all: absolute.tar
 absolute.tar:
 	umask 022 && echo moo > moo
-	$(TAR) -cf $(@) -s ,^,/,  moo
+	$(TAR) -cf $(@) -s ,^,/tmp/,  moo
 	rm -f moo
 
 # TODO: absolute2.tar
