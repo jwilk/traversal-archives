@@ -9,6 +9,10 @@ absolute2::
 
    -rw-r--r--  //moo
 
+relative::
+
+   -rw-r--r--  ../moo
+
 symlink::
 
    lrwxrwxrwx  moo → /tmp/moo
