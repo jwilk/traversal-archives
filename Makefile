@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: absolute.zip absolute2.zip relative.zip symlink.zip dirsymlink.zip
+all: absolute.zip absolute2.zip relative.zip relative2.zip symlink.zip dirsymlink.zip
 
 absolute.zip:
 	umask 022 && echo moo > mooo
@@ -18,6 +18,12 @@ relative.zip:
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
 	cd tmp && zip -X ../$(@) ../moo
+	rm -rf tmp moo
+
+relative2.zip:
+	mkdir -p -m 755 tmp/tmp
+	umask 022 && echo moo > moo
+	cd tmp && zip -X ../$(@) tmp/../../moo
 	rm -rf tmp moo
 
 symlink.zip:

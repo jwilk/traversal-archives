@@ -13,6 +13,10 @@ relative::
 
    -rw-r--r--  ../moo
 
+relative2::
+
+   -rw-r--r--  tmp/../../moo
+
 symlink::
 
    lrwxrwxrwx  moo → /tmp/moo
