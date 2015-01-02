@@ -1,4 +1,4 @@
-ifeq "$(which zip)" ""
+ifeq "$(shell which zip)" ""
 $(warning zip(1) is needed to create TAR samples)
 else
 

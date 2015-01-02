@@ -1,6 +1,6 @@
 export TAR = bsdtar -P --uid=0 --gid=0
 
-ifeq "$(which bsdtar)" ""
+ifeq "$(shell which bsdtar)" ""
 $(warning bsdtar(1) is needed to create TAR samples)
 else
 
