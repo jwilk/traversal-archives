@@ -1,5 +1,6 @@
 syntax: glob
 
+arc/*.arc
 arj/*.arj
 rar/*.rar
 tar/*.tar
