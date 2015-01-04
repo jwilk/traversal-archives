@@ -33,8 +33,8 @@ relative0.arc:
 all: relative2.arc
 relative2.arc:
 	umask 022 && echo moo > moooooooooo
-	arc m moo.zip moooooooooo
-	mv moo.zip $(@)
+	arc m moo.arc moooooooooo
+	mv moo.arc $(@)
 	sed -i -e s,moooooooooo,t/../../moo, $(@)
 
 # vim:ts=4 sts=4 sw=4 noet
