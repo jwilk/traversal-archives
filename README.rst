@@ -1,7 +1,7 @@
 Archive samples for testing against directory traversals
 ========================================================
 
-absolute::
+absolute1::
 
    -rw-r--r--  /tmp/moo
 
@@ -9,7 +9,7 @@ absolute2::
 
    -rw-r--r--  //tmp/moo
 
-relative::
+relative0::
 
    -rw-r--r--  ../moo
 

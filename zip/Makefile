@@ -9,8 +9,8 @@ ifeq "$(shell which zip)" ""
 $(error zip(1) is needed to create TAR samples)
 endif
 
-all: absolute.zip
-absolute.zip:
+all: absolute1.zip
+absolute1.zip:
 	umask 022 && echo moo > mooooooo
 	zip -X -m $(@) mooooooo
 	sed -i -e s,mooooooo,/tmp/moo, $(@)
@@ -21,8 +21,8 @@ absolute2.zip:
 	zip -X -m $(@) moooooooo
 	sed -i -e s,moooooooo,//tmp/moo, $(@)
 
-all: relative.zip
-relative.zip:
+all: relative0.zip
+relative0.zip:
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
 	cd tmp && zip -X ../$(@) ../moo

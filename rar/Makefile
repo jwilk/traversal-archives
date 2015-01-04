@@ -9,8 +9,8 @@ ifeq "$(shell which rar)" ""
 $(error rar(1) is needed to create RAR samples)
 endif
 
-all: absolute.rar
-absolute.rar:
+all: absolute1.rar
+absolute1.rar:
 	umask 022 && echo moo > moo
 	rm -f $(@)
 	rar a -ap/ $(@) moo
@@ -23,8 +23,8 @@ absolute2.rar:
 	rar a -ap// $(@) moo
 	rm -f moo
 
-all: relative.rar
-relative.rar:
+all: relative0.rar
+relative0.rar:
 	umask 022 && echo moo > moo
 	rm -f $(@)
 	rar a -ap../ $(@) moo

@@ -9,8 +9,8 @@ ifeq "$(shell which zoo)" ""
 $(error zoo(1) is needed to create zoo samples)
 endif
 
-all: absolute.zoo
-absolute.zoo:
+all: absolute1.zoo
+absolute1.zoo:
 	umask 022 && echo moo > mooooooo
 	zoo aM $(@) mooooooo
 	sed -i -e s,mooooooo,/tmp/moo, $(@)
@@ -21,8 +21,8 @@ absolute2.zoo:
 	zoo aM $(@) moooooooo
 	sed -i -e s,moooooooo,//tmp/moo, $(@)
 
-all: relative.zoo
-relative.zoo:
+all: relative0.zoo
+relative0.zoo:
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
 	cd tmp && zoo a ../$(@) ../moo

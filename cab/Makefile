@@ -9,8 +9,8 @@ ifeq "$(shell which lcab)" ""
 $(error lcab(1) is needed to create Microsoft cabinet samples)
 endif
 
-all: absolute.cab
-absolute.cab:
+all: absolute1.cab
+absolute1.cab:
 	echo moo > '\tmp\moo'
 	lcab '\tmp\moo' $(@)
 	rm -f '\tmp\moo'
@@ -21,8 +21,8 @@ absolute2.cab:
 	lcab '\\tmp\moo' $(@)
 	rm -f '\\tmp\moo'
 
-all: relative.cab
-relative.cab:
+all: relative0.cab
+relative0.cab:
 	echo moo > '..\moo'
 	lcab '..\moo' $(@)
 	rm -f '..\moo'

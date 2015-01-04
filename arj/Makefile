@@ -9,8 +9,8 @@ ifeq "$(shell which arj)" ""
 $(error arj(1) is needed to create ARJ samples)
 endif
 
-all: absolute.arj
-absolute.arj:
+all: absolute1.arj
+absolute1.arj:
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf '/tmp/moo\n' | arj n $(@)
@@ -21,8 +21,8 @@ absolute2.arj:
 	arj m $(@) moo
 	printf '//tmp/moo\n' | arj n $(@)
 
-all: relative.arj
-relative.arj:
+all: relative0.arj
+relative0.arj:
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf '../moo\n' | arj n $(@)

@@ -11,8 +11,8 @@ ifeq "$(shell which bsdtar)" ""
 $(error bsdtar(1) is needed to create tar samples)
 endif
 
-all: absolute.tar
-absolute.tar:
+all: absolute1.tar
+absolute1.tar:
 	umask 022 && echo moo > moo
 	$(TAR) -cf $(@) -s ,^,/tmp/,  moo
 	rm -f moo
@@ -21,8 +21,8 @@ absolute.tar:
 # Unforunately, bsdtar(1) doesn't like paths starting with “//”.
 # https:/bugs.debian.org/774445
 
-all: relative.tar
-relative.tar:
+all: relative0.tar
+relative0.tar:
 	umask 022 && echo moo > moo
 	$(TAR) -cf $(@) -s ,^,../, moo
 	rm -f moo
