@@ -2,6 +2,7 @@ syntax: glob
 
 arc/*.arc
 arj/*.arj
+cab/*.cab
 rar/*.rar
 tar/*.tar
 zip/*.zip
