@@ -7,7 +7,7 @@ clean:
 	
 ifeq "$(shell which zip)" ""
 $(error zip(1) is needed to create TAR samples)
-else
+endif
 
 all: absolute.zip
 absolute.zip:
@@ -52,6 +52,5 @@ dirsymlink.zip:
 	zip -X $(@) tmp/moo
 	rm -rf tmp
 
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

@@ -7,7 +7,7 @@ clean:
 	
 ifeq "$(shell which lcab)" ""
 $(error lcab(1) is needed to create Microsoft cabinet samples)
-else
+endif
 
 all: absolute.cab
 absolute.cab:
@@ -32,7 +32,5 @@ relative2.cab:
 	echo moo > 'tmp\..\..\moo'
 	lcab 'tmp\..\..\moo' $(@)
 	rm -f 'tmp\..\..\moo'
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

@@ -9,7 +9,7 @@ clean:
 
 ifeq "$(shell which bsdtar)" ""
 $(error bsdtar(1) is needed to create tar samples)
-else
+endif
 
 all: absolute.tar
 absolute.tar:
@@ -51,7 +51,5 @@ dirsymlink.tar:
 	umask 022 && echo moo > tmp/moo
 	$(TAR) -rf $(@) tmp/moo
 	rm -rf tmp
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

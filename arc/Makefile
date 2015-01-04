@@ -7,7 +7,7 @@ clean:
 	
 ifeq "$(shell which arc)" ""
 $(error arc(1) is needed to create arc samples)
-else
+endif
 
 all: absolute.arc
 absolute.arc:
@@ -34,7 +34,5 @@ relative2.arc:
 	arc m moo.zip moooooooooo
 	mv moo.zip $(@)
 	sed -i -e s,moooooooooo,t/../../moo, $(@)
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

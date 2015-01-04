@@ -7,7 +7,7 @@ clean:
 	
 ifeq "$(shell which arj)" ""
 $(error arj(1) is needed to create ARJ samples)
-else
+endif
 
 all: absolute.arj
 absolute.arj:
@@ -49,7 +49,5 @@ dirsymlink.arj:
 	umask 022 && echo moo > tmp/moo
 	arj a -a $(@) tmp/moo
 	rm -rf tmp
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

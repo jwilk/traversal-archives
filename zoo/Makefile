@@ -7,7 +7,7 @@ clean:
 	
 ifeq "$(shell which zoo)" ""
 $(error zoo(1) is needed to create zoo samples)
-else
+endif
 
 all: absolute.zoo
 absolute.zoo:
@@ -34,7 +34,5 @@ relative2.zoo:
 	umask 022 && echo moo > moo
 	cd tmp && zoo a ../$(@) tmp/../../moo
 	rm -rf tmp moo
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet

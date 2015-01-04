@@ -7,7 +7,7 @@ clean:
 
 ifeq "$(shell which rar)" ""
 $(error rar(1) is needed to create RAR samples)
-else
+endif
 
 all: absolute.rar
 absolute.rar:
@@ -57,7 +57,5 @@ dirsymlink.rar:
 	umask 022 && echo moo > tmp/moo
 	rar a $(@) tmp/moo
 	rm -rf tmp
-
-endif
 
 # vim:ts=4 sts=4 sw=4 noet
