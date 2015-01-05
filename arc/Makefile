@@ -30,11 +30,4 @@ relative0.arc:
 	mv moo.arc $(@)
 	sed -i -e s,mooooo,../moo, $(@)
 
-all: relative2.arc
-relative2.arc:
-	echo moo > moooooooooo
-	arc m moo.arc moooooooooo
-	mv moo.arc $(@)
-	sed -i -e s,moooooooooo,t/../../moo, $(@)
-
 # vim:ts=4 sts=4 sw=4 noet
