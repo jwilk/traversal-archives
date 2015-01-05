@@ -19,12 +19,12 @@ relative2::
 
 symlink::
 
-   lrwxrwxrwx  moo → /tmp/moo
+   lrwxrwxrwx  moo -> /tmp/moo
    -rw-r--r--  moo
 
 dirsymlink::
 
-   lrwxrwxrwx  tmp → /tmp
+   lrwxrwxrwx  tmp -> /tmp
    -rw-r--r--  tmp/moo
 
 .. vim:ts=3 sts=3 sw=3 et
