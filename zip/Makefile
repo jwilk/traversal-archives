@@ -6,7 +6,7 @@ clean:
 	rm -rf *.zip tmp* moo* zoo*
 	
 ifeq "$(shell which zip)" ""
-$(error zip(1) is needed to create TAR samples)
+$(error zip(1) is needed to create zip samples)
 endif
 
 all: absolute1.zip
