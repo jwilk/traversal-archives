@@ -1,10 +1,10 @@
 .PHONY: all
 all:
-	
+
 .PHONY: clean
 clean:
 	rm -rf *.zoo tmp* moo*
-	
+
 ifeq "$(shell which zoo)" ""
 $(error zoo(1) is needed to create zoo samples)
 endif

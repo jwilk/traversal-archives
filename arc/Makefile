@@ -1,10 +1,10 @@
 .PHONY: all
 all:
-	
+
 .PHONY: clean
 clean:
 	rm -rf *.arc tmp* moo*
-	
+
 ifeq "$(shell which arc)" ""
 $(error arc(1) is needed to create arc samples)
 endif
@@ -13,7 +13,7 @@ all: absolute1.arc
 absolute1.arc:
 	echo moo > mooooooo
 	arc m moo.arc mooooooo
-	mv moo.arc $(@) 
+	mv moo.arc $(@)
 	sed -i -e s,mooooooo,/tmp/moo, $(@)
 
 all: absolute2.arc
