@@ -18,7 +18,7 @@ absolute1.tar:
 	rm -f moo
 
 # TODO: absolute2.tar
-# Unforunately, bsdtar(1) doesn't like paths starting with “//”.
+# Unfortunately, bsdtar(1) doesn't like paths starting with “//”.
 # https:/bugs.debian.org/774445
 
 all: relative0.tar
