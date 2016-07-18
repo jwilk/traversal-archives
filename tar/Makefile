@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-export TAR = bsdtar -P --uid=0 --gid=0
+export TAR = tar -P --owner root --group root --mode a+rX
 
 .PHONY: all
 all:
@@ -27,14 +27,10 @@ all:
 clean:
 	rm -rf *.tar tmp* moo*
 
-ifeq "$(shell which bsdtar)" ""
-$(error bsdtar(1) is needed to create tar samples)
-endif
-
 all: absolute1.tar
 absolute1.tar:
-	umask 022 && echo moo > moo
-	$(TAR) -cf $(@) -s ,^,/tmp/,  moo
+	echo moo > moo
+	$(TAR) -cf $(@) --transform s,^,/tmp/,  moo
 	rm -f moo
 
 # TODO: absolute2.tar
@@ -43,14 +39,14 @@ absolute1.tar:
 
 all: relative0.tar
 relative0.tar:
-	umask 022 && echo moo > moo
-	$(TAR) -cf $(@) -s ,^,../, moo
+	echo moo > moo
+	$(TAR) -cf $(@) --transform s,^,../, moo
 	rm -f moo
 
 all: relative2.tar
 relative2.tar:
-	umask 022 && echo moo > moo
-	$(TAR) -cf $(@) -s ,^,tmp/../../, moo
+	echo moo > moo
+	$(TAR) -cf $(@) --transform s,^,tmp/../../, moo
 	rm -f moo
 
 all: symlink.tar
@@ -58,7 +54,7 @@ symlink.tar:
 	ln -sf /tmp/moo moo
 	$(TAR) -cf $(@) moo
 	rm -f moo
-	umask 022 && echo moo > moo
+	echo moo > moo
 	$(TAR) -rf $(@) moo
 	rm -f moo
 
@@ -68,7 +64,7 @@ dirsymlink.tar:
 	$(TAR) -cf $(@) tmp
 	rm -f tmp
 	mkdir -m 755 tmp
-	umask 022 && echo moo > tmp/moo
+	echo moo > tmp/moo
 	$(TAR) -rf $(@) tmp/moo
 	rm -rf tmp
 
