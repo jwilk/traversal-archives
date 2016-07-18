@@ -33,9 +33,11 @@ absolute1.tar:
 	$(TAR) -cf $(@) --transform s,^,/tmp/,  moo
 	rm -f moo
 
-# TODO: absolute2.tar
-# Unfortunately, bsdtar(1) doesn't like paths starting with “//”.
-# https:/bugs.debian.org/774445
+all: absolute2.tar
+absolute2.tar:
+	echo moo > moo
+	$(TAR) -cf $(@) --transform s,^,//tmp/,  moo
+	rm -f moo
 
 all: relative0.tar
 relative0.tar:
