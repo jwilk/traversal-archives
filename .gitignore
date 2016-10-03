@@ -1,5 +1,3 @@
-syntax: glob
-
 arc/*.arc
 arj/*.arj
 cab/*.cab
