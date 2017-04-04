@@ -49,4 +49,4 @@ The samples helped find the following bugs:
 
   - https://bugs.debian.org/774580
 
-.. vim:ts=3 sts=3 sw=3 et
+.. vim:ts=3 sts=3 sw=3 et ft=rst
