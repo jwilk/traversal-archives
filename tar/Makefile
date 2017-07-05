@@ -1,4 +1,4 @@
-# Copyright © 2015 Jakub Wilk <jwilk@jwilk.net>
+# Copyright © 2015-2017 Jakub Wilk <jwilk@jwilk.net>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the “Software”), to deal
@@ -69,5 +69,27 @@ dirsymlink.tar:
 	echo moo > tmp/moo
 	$(TAR) -rf $(@) tmp/moo
 	rm -rf tmp
+
+all: dirsymlink2a.tar
+dirsymlink2a.tar:
+	ln -sf . cur
+	ln -sf cur/.. par
+	$(TAR) -cf $(@) cur par
+	rm -f cur par
+	mkdir -m 755 par
+	echo moo > par/moo
+	$(TAR) -rf $(@) par/moo
+	rm -rf par
+
+all: dirsymlink2b.tar
+dirsymlink2b.tar:
+	ln -sf . cur
+	ln -sf .. par
+	$(TAR) -cf $(@) cur cur/par
+	rm -f cur par
+	mkdir -m 755 par
+	echo moo > par/moo
+	$(TAR) -rf $(@) par/moo
+	rm -rf par
 
 # vim:ts=4 sts=4 sw=4 noet

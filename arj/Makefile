@@ -1,4 +1,4 @@
-# Copyright © 2015 Jakub Wilk <jwilk@jwilk.net>
+# Copyright © 2015-2017 Jakub Wilk <jwilk@jwilk.net>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the “Software”), to deal
@@ -69,5 +69,26 @@ dirsymlink.arj:
 	umask 022 && echo moo > tmp/moo
 	arj a -a $(@) tmp/moo
 	rm -rf tmp
+
+all: dirsymlink2a.arj
+dirsymlink2a.arj:
+	ln -sf . cur
+	ln -sf cur/.. par
+	arj m -a $(@) cur par
+	mkdir -m 755 par
+	umask 022 && echo moo > par/moo
+	arj a -a $(@) par/moo
+	rm -rf par
+
+all: dirsymlink2b.arj
+dirsymlink2b.arj:
+	ln -sf . cur
+	ln -sf .. par
+	arj a -a $(@) cur cur/par
+	rm -f cur par
+	mkdir -m 755 par
+	umask 022 && echo moo > par/moo
+	arj a -a $(@) par/moo
+	rm -rf par
 
 # vim:ts=4 sts=4 sw=4 noet

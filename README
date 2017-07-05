@@ -27,6 +27,18 @@ dirsymlink::
    lrwxrwxrwx  tmp -> /tmp
    -rw-r--r--  tmp/moo
 
+dirsymlink2a::
+
+   lrwxrwxrwx  cur -> .
+   lrwxrwxrwx  par -> cur/..
+   -rw-r--r--  par/moo
+
+dirsymlink2b::
+
+   lrwxrwxrwx  cur -> .
+   lrwxrwxrwx  cur/par -> ..
+   -rw-r--r--  par/moo
+
 The bug-o-rama trophy case
 --------------------------
 
