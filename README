@@ -62,4 +62,8 @@ The samples helped find the following bugs:
 
   - https://bugs.debian.org/774580
 
+* UnRAR:
+
+  - http://www.openwall.com/lists/oss-security/2017/08/14/3
+
 .. vim:ts=3 sts=3 sw=3 et ft=rst
