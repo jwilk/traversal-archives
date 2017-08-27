@@ -33,13 +33,13 @@ all: absolute1.zoo
 absolute1.zoo:
 	umask 022 && echo moo > mooooooo
 	zoo aM $(@) mooooooo
-	sed -i -e s,mooooooo,/tmp/moo, $(@)
+	perl -pi -e s,mooooooo,/tmp/moo, $(@)
 
 all: absolute2.zoo
 absolute2.zoo:
 	umask 022 && echo moo > moooooooo
 	zoo aM $(@) moooooooo
-	sed -i -e s,moooooooo,//tmp/moo, $(@)
+	perl -pi -e s,moooooooo,//tmp/moo, $(@)
 
 all: relative0.zoo
 relative0.zoo:

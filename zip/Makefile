@@ -33,13 +33,13 @@ all: absolute1.zip
 absolute1.zip:
 	umask 022 && echo moo > mooooooo
 	zip -X -m $(@) mooooooo
-	sed -i -e s,mooooooo,/tmp/moo, $(@)
+	perl -pi -e s,mooooooo,/tmp/moo, $(@)
 
 all: absolute2.zip
 absolute2.zip:
 	umask 022 && echo moo > moooooooo
 	zip -X -m $(@) moooooooo
-	sed -i -e s,moooooooo,//tmp/moo, $(@)
+	perl -pi -e s,moooooooo,//tmp/moo, $(@)
 
 all: relative0.zip
 relative0.zip:
@@ -61,7 +61,7 @@ symlink.zip:
 	zip -X -y -m $(@) moo
 	umask 022 && echo moo > zoo
 	zip -X -m $(@) zoo
-	sed -i -e s/zoo/moo/ $(@)
+	perl -pi -e s/zoo/moo/ $(@)
 
 all: dirsymlink.zip
 dirsymlink.zip:
