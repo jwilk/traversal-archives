@@ -31,18 +31,21 @@ endif
 
 all: absolute1.zoo
 absolute1.zoo:
+	rm -f $(@)
 	umask 022 && echo moo > mooooooo
 	zoo aM $(@) mooooooo
 	perl -pi -e s,mooooooo,/tmp/moo, $(@)
 
 all: absolute2.zoo
 absolute2.zoo:
+	rm -f $(@)
 	umask 022 && echo moo > moooooooo
 	zoo aM $(@) moooooooo
 	perl -pi -e s,moooooooo,//tmp/moo, $(@)
 
 all: relative0.zoo
 relative0.zoo:
+	rm -f $(@)
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
 	cd tmp && zoo a ../$(@) ../moo
@@ -50,6 +53,7 @@ relative0.zoo:
 
 all: relative2.zoo
 relative2.zoo:
+	rm -f $(@)
 	mkdir -p -m 755 tmp/tmp
 	umask 022 && echo moo > moo
 	cd tmp && zoo a ../$(@) tmp/../../moo

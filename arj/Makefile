@@ -31,30 +31,35 @@ endif
 
 all: absolute1.arj
 absolute1.arj:
+	rm -f $(@)
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf '/tmp/moo\n' | arj n $(@)
 
 all: absolute2.arj
 absolute2.arj:
+	rm -f $(@)
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf '//tmp/moo\n' | arj n $(@)
 
 all: relative0.arj
 relative0.arj:
+	rm -f $(@)
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf '../moo\n' | arj n $(@)
 
 all: relative2.arj
 relative2.arj:
+	rm -f $(@)
 	umask 022 && echo moo > moo
 	arj m $(@) moo
 	printf 'tmp/../../moo\n' | arj n $(@)
 
 all: symlink.arj
 symlink.arj:
+	rm -f $(@)
 	ln -sf /tmp/moo moo
 	arj m -a $(@) moo
 	umask 022 && echo moo > zoo
