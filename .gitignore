@@ -1,7 +1,7 @@
-arc/*.arc
-arj/*.arj
-cab/*.cab
-rar/*.rar
-tar/*.tar
-zip/*.zip
-zoo/*.zoo
+/arc/*.arc
+/arj/*.arj
+/cab/*.cab
+/rar/*.rar
+/tar/*.tar
+/zip/*.zip
+/zoo/*.zoo
