@@ -66,4 +66,8 @@ The samples helped find the following bugs:
 
   - http://www.openwall.com/lists/oss-security/2017/08/14/3
 
+* GNOME Nautilus:
+
+  - https://bugs.debian.org/878012
+
 .. vim:ts=3 sts=3 sw=3 et ft=rst
