@@ -25,8 +25,8 @@ all:
 clean:
 	rm -rf *.a tmp* moo*
 
-ifeq "$(shell which arc)" ""
-$(error arc(1) is needed to create arc samples)
+ifeq "$(shell which ar)" ""
+$(error ar(1) is needed to create ar samples)
 endif
 
 all: absolute1.a
