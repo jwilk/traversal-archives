@@ -1,0 +1,11 @@
+dist: trusty
+sudo: false
+language: generic
+install:
+- python -m pip install --user pygments restructuredtext-lint
+script:
+- make -C ar
+- make -C tar
+- restructuredtext-lint --encoding=UTF-8 README
+
+# vim:ts=2 sts=2 sw=2 et
