@@ -50,4 +50,6 @@ relative0.arc:
 	mv moo.arc $(@)
 	perl -pi -e s,mooooo,../moo, $(@)
 
+.error = GNU make is required
+
 # vim:ts=4 sts=4 sw=4 noet

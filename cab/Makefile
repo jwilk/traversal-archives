@@ -53,4 +53,6 @@ relative2.cab:
 	lcab 'tmp\..\..\moo' $(@)
 	rm -f 'tmp\..\..\moo'
 
+.error = GNU make is required
+
 # vim:ts=4 sts=4 sw=4 noet

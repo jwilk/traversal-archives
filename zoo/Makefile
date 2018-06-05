@@ -59,4 +59,6 @@ relative2.zoo:
 	cd tmp && zoo a ../$(@) tmp/../../moo
 	rm -rf tmp moo
 
+.error = GNU make is required
+
 # vim:ts=4 sts=4 sw=4 noet
