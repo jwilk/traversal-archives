@@ -66,6 +66,10 @@ The samples helped find the following bugs:
 
   - http://www.openwall.com/lists/oss-security/2017/08/14/3
 
+* Perl (Archive::Tar):
+
+  - https://bugs.debian.org/900834
+
 * GNOME Nautilus:
 
   - https://bugs.debian.org/878012
