@@ -137,4 +137,8 @@ The samples helped find the following bugs:
 
   - https://bugs.debian.org/878269
 
+* archiver:
+
+  - https://github.com/mholt/archiver/issues/69
+
 .. vim:ts=3 sts=3 sw=3 et ft=rst
