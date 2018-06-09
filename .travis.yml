@@ -8,8 +8,8 @@ script:
 - make -C tar
 - .private/update-readme
 - git diff --exit-code
-- restructuredtext-lint --encoding=UTF-8 README
 - grep -Po '(?<=<)https:\S+/download/\S+(?=>)' README
   | wget -O /dev/null -nv -i -
+- restructuredtext-lint --encoding=UTF-8 README
 
 # vim:ts=2 sts=2 sw=2 et
