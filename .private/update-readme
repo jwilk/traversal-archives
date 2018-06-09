@@ -19,14 +19,17 @@ def main():
     cp = configparser.RawConfigParser()
     cp.read(here + '/layouts')
     layouts = cp['layouts']
+    ext_to_fmt = {}
     layout_exts = {lname: set() for lname in layouts}
     for path in glob.iglob('*/Makefile'):
+        fmt = os.path.dirname(path)
         with open(path, 'rt', encoding='UTF-8') as file:
             for line in file:
                 match = re.match(r'^all:\s*(\S+)[.](\S+)$', line)
                 if match is not None:
                     (lname, ext) = match.groups()
                     layout_exts[lname].add(ext)
+                    ext_to_fmt[ext] = fmt
     file = io.StringIO()
     fprint = functools.partial(print, file=file, sep='')
     for lname, layout in layouts.items():
@@ -37,8 +40,8 @@ def main():
             fprint('     ', line)
         fprint()
         for ext in sorted(layout_exts[lname]):
-            line = '  `{ext} <https://github.com/jwilk/path-traversal-samples/releases/download/0/{layout}.{ext}>`__'
-            line = line.format(layout=lname, ext=ext)
+            line = '  `{fmt} <https://github.com/jwilk/path-traversal-samples/releases/download/0/{layout}.{ext}>`__'
+            line = line.format(layout=lname, ext=ext, fmt=ext_to_fmt[ext])
             fprint(line)
         fprint()
     table = file.getvalue()

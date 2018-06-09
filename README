@@ -7,7 +7,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  /tmp/moo
 
-  `a <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.a>`__
+  `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.a>`__
   `arc <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.arc>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.arj>`__
   `cab <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.cab>`__
@@ -20,7 +20,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  //tmp/moo
 
-  `a <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute2.a>`__
+  `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute2.a>`__
   `arc <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute2.arc>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute2.arj>`__
   `cab <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute2.cab>`__
@@ -33,7 +33,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  ../moo
 
-  `a <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.a>`__
+  `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.a>`__
   `arc <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.arc>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.arj>`__
   `cab <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.cab>`__
@@ -46,7 +46,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  tmp/../../moo
 
-  `a <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.a>`__
+  `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.a>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.arj>`__
   `cab <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.cab>`__
   `rar <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.rar>`__
