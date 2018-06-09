@@ -7,6 +7,7 @@ addons:
     - python3-pip
     - python3-setuptools
 install:
+- python3 -m pip install --user pydiatra pyflakes
 - python3 -m pip install --user pygments restructuredtext-lint
 script:
 - make -C ar
@@ -15,6 +16,8 @@ script:
 - git diff --exit-code
 - grep -Po '(?<=<)https:\S+/download/\S+(?=>)' README
   | wget -O /dev/null -nv -i -
+- python3 -m pydiatra .
+- python3 -m pyflakes .
 - restructuredtext-lint --encoding=UTF-8 README
 
 # vim:ts=2 sts=2 sw=2 et
