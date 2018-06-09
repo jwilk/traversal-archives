@@ -1,8 +1,13 @@
 dist: trusty
 sudo: false
 language: generic
+addons:
+  apt:
+    packages:
+    - python3-pip
+    - python3-setuptools
 install:
-- python -m pip install --user pygments restructuredtext-lint
+- python3 -m pip install --user pygments restructuredtext-lint
 script:
 - make -C ar
 - make -C tar
