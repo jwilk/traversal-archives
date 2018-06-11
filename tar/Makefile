@@ -25,7 +25,7 @@ all:
 
 .PHONY: clean
 clean:
-	rm -rf *.tar tmp* moo*
+	rm -rf *.tar tmp* moo* cur* par*
 
 all: absolute1.tar
 absolute1.tar:

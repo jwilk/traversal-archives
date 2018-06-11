@@ -23,7 +23,7 @@ all:
 
 .PHONY: clean
 clean:
-	rm -rf *.zip tmp* moo* zoo*
+	rm -rf *.zip tmp* moo* zoo* cur* par*
 
 ifeq "$(shell which zip)" ""
 $(error zip(1) is needed to create zip samples)

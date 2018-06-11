@@ -23,7 +23,7 @@ all:
 
 .PHONY: clean
 clean:
-	rm -rf *.rar tmp* moo*
+	rm -rf *.rar tmp* moo* cur* par*
 
 ifeq "$(shell which rar)" ""
 $(error rar(1) is needed to create RAR samples)

@@ -23,7 +23,7 @@ all:
 
 .PHONY: clean
 clean:
-	rm -rf *.arj tmp* moo* zoo*
+	rm -rf *.arj tmp* moo* zoo* cur* par*
 
 ifeq "$(shell which arj)" ""
 $(error arj(1) is needed to create ARJ samples)
