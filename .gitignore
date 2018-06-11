@@ -3,6 +3,7 @@
 /arc/*.arc
 /arj/*.arj
 /cab/*.cab
+/cpio/*.cpio
 /rar/*.rar
 /tar/*.tar
 /zip/*.zip
