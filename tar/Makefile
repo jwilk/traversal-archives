@@ -18,7 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-export TAR = tar -P --owner root --group root --mode a+rX
+TAR = tar
+tar = $(TAR) -P --owner root --group root --mode a+rX
 
 .PHONY: all
 all:
@@ -30,66 +31,66 @@ clean:
 all: absolute1.tar
 absolute1.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,/tmp/, moo
+	$(tar) -cf $(@) --transform s,^,/tmp/, moo
 	rm -f moo
 
 all: absolute2.tar
 absolute2.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,//tmp/, moo
+	$(tar) -cf $(@) --transform s,^,//tmp/, moo
 	rm -f moo
 
 all: relative0.tar
 relative0.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,../, moo
+	$(tar) -cf $(@) --transform s,^,../, moo
 	rm -f moo
 
 all: relative2.tar
 relative2.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,tmp/../../, moo
+	$(tar) -cf $(@) --transform s,^,tmp/../../, moo
 	rm -f moo
 
 all: symlink.tar
 symlink.tar:
 	ln -sf /tmp/moo moo
-	$(TAR) -cf $(@) moo
+	$(tar) -cf $(@) moo
 	rm -f moo
 	echo moo > moo
-	$(TAR) -rf $(@) moo
+	$(tar) -rf $(@) moo
 	rm -f moo
 
 all: dirsymlink.tar
 dirsymlink.tar:
 	ln -sf /tmp tmp
-	$(TAR) -cf $(@) tmp
+	$(tar) -cf $(@) tmp
 	rm -f tmp
 	mkdir -m 755 tmp
 	echo moo > tmp/moo
-	$(TAR) -rf $(@) tmp/moo
+	$(tar) -rf $(@) tmp/moo
 	rm -rf tmp
 
 all: dirsymlink2a.tar
 dirsymlink2a.tar:
 	ln -sf . cur
 	ln -sf cur/.. par
-	$(TAR) -cf $(@) cur par
+	$(tar) -cf $(@) cur par
 	rm -f cur par
 	mkdir -m 755 par
 	echo moo > par/moo
-	$(TAR) -rf $(@) par/moo
+	$(tar) -rf $(@) par/moo
 	rm -rf par
 
 all: dirsymlink2b.tar
 dirsymlink2b.tar:
 	ln -sf . cur
 	ln -sf .. par
-	$(TAR) -cf $(@) cur cur/par
+	$(tar) -cf $(@) cur cur/par
 	rm -f cur par
 	mkdir -m 755 par
 	echo moo > par/moo
-	$(TAR) -rf $(@) par/moo
+	$(tar) -rf $(@) par/moo
 	rm -rf par
 
 .error = GNU make is required
