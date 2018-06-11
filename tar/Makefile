@@ -30,13 +30,13 @@ clean:
 all: absolute1.tar
 absolute1.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,/tmp/,  moo
+	$(TAR) -cf $(@) --transform s,^,/tmp/, moo
 	rm -f moo
 
 all: absolute2.tar
 absolute2.tar:
 	echo moo > moo
-	$(TAR) -cf $(@) --transform s,^,//tmp/,  moo
+	$(TAR) -cf $(@) --transform s,^,//tmp/, moo
 	rm -f moo
 
 all: relative0.tar
