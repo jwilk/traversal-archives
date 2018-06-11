@@ -7,6 +7,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  /tmp/moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.7z>`__
   `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.a>`__
   `arc <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.arc>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/absolute1.arj>`__
@@ -33,6 +34,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  ../moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.7z>`__
   `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.a>`__
   `arc <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.arc>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative0.arj>`__
@@ -46,6 +48,7 @@ Archive samples for testing against directory traversals
 
      -rw-r--r--  tmp/../../moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.7z>`__
   `ar <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.a>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.arj>`__
   `cab <https://github.com/jwilk/path-traversal-samples/releases/download/0/relative2.cab>`__
@@ -59,6 +62,7 @@ Archive samples for testing against directory traversals
      lrwxrwxrwx  moo -> /tmp/moo
      -rw-r--r--  moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/symlink.7z>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/symlink.arj>`__
   `rar <https://github.com/jwilk/path-traversal-samples/releases/download/0/symlink.rar>`__
   `tar <https://github.com/jwilk/path-traversal-samples/releases/download/0/symlink.tar>`__
@@ -69,6 +73,7 @@ Archive samples for testing against directory traversals
      lrwxrwxrwx  tmp -> /tmp
      -rw-r--r--  tmp/moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink.7z>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink.arj>`__
   `rar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink.rar>`__
   `tar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink.tar>`__
@@ -80,6 +85,7 @@ Archive samples for testing against directory traversals
      lrwxrwxrwx  par -> cur/..
      -rw-r--r--  par/moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2a.7z>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2a.arj>`__
   `rar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2a.rar>`__
   `tar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2a.tar>`__
@@ -91,6 +97,7 @@ Archive samples for testing against directory traversals
      lrwxrwxrwx  cur/par -> ..
      -rw-r--r--  par/moo
 
+  `7zip <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2b.7z>`__
   `arj <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2b.arj>`__
   `rar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2b.rar>`__
   `tar <https://github.com/jwilk/path-traversal-samples/releases/download/0/dirsymlink2b.tar>`__
