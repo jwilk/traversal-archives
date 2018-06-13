@@ -120,8 +120,8 @@ The samples helped find the following bugs:
 
 * ARJ:
 
-  - https://bugs.debian.org/774434
-  - https://bugs.debian.org/774435
+  - https://bugs.debian.org/774434 [CVE-2015-0556]
+  - https://bugs.debian.org/774435 [CVE-2015-0557]
   - https://bugs.debian.org/867520
 
 * Zoo:
@@ -134,15 +134,15 @@ The samples helped find the following bugs:
 
 * gcab:
 
-  - https://bugs.debian.org/774580
+  - https://bugs.debian.org/774580 [CVE-2015-0552]
 
 * UnRAR:
 
-  - http://www.openwall.com/lists/oss-security/2017/08/14/3
+  - http://www.openwall.com/lists/oss-security/2017/08/14/3 [CVE-2017-12938]
 
 * Perl (Archive::Tar):
 
-  - https://bugs.debian.org/900834
+  - https://bugs.debian.org/900834 [CVE-2018-12015]
 
 * GNOME Nautilus:
 
