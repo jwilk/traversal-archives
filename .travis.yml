@@ -6,12 +6,18 @@ addons:
     packages:
     - python3-pip
     - python3-setuptools
+    - bsdtar
+    - cpio
+    - zip
 install:
 - python3 -m pip install --user pydiatra pyflakes
 - python3 -m pip install --user pygments restructuredtext-lint
 script:
+- make -C 7zip
 - make -C ar
+- make -C cpio
 - make -C tar
+- make -C zip
 - .private/update-readme
 - git diff --exit-code
 - grep -Po '(?<=<)https:\S+/download/\S+(?=>)' README
