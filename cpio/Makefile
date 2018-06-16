@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-cpio = cpio -R +0:+0
+cpio = cpio -R root:root
 
 .PHONY: all
 all:
