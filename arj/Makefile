@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.arj tmp* moo* zoo* cur* par*
 
-ifeq "$(shell which arj)" ""
+ifeq "$(shell command -v arj;)" ""
 $(error arj(1) is needed to create ARJ samples)
 endif
 

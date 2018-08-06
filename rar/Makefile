@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.rar tmp* moo* cur* par*
 
-ifeq "$(shell which rar)" ""
+ifeq "$(shell command -v rar;)" ""
 $(error rar(1) is needed to create RAR samples)
 endif
 

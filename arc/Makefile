@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.arc tmp* moo*
 
-ifeq "$(shell which arc)" ""
+ifeq "$(shell command -v arc;)" ""
 $(error arc(1) is needed to create arc samples)
 endif
 

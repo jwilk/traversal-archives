@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.zoo tmp* moo*
 
-ifeq "$(shell which zoo)" ""
+ifeq "$(shell command -v zoo;)" ""
 $(error zoo(1) is needed to create zoo samples)
 endif
 

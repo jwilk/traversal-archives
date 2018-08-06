@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.a tmp* moo*
 
-ifeq "$(shell which ar)" ""
+ifeq "$(shell command -v ar;)" ""
 $(error ar(1) is needed to create ar samples)
 endif
 

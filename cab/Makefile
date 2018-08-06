@@ -25,7 +25,7 @@ all:
 clean:
 	rm -rf *.cab *'\\'*
 
-ifeq "$(shell which lcab)" ""
+ifeq "$(shell command -v lcab;)" ""
 $(error lcab(1) is needed to create Microsoft cabinet samples)
 endif
 

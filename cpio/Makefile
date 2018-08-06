@@ -27,7 +27,7 @@ all:
 clean:
 	rm -rf *.cpio tmp* moo* zoo* cur par
 
-ifeq "$(shell which cpio)" ""
+ifeq "$(shell command -v cpio;)" ""
 $(error cpio(1) is needed to create cpio samples)
 endif
 
