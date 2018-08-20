@@ -6,8 +6,12 @@ addons:
     packages:
     - python3-pip
     - python3-setuptools
+    - arc
+    - arj
     - bsdtar
     - cpio
+    - lcab
+    - rar
     - zip
 install:
 - python3 -m pip install --user pydiatra pyflakes
@@ -15,7 +19,11 @@ install:
 script:
 - make -C 7zip
 - make -C ar
+- make -C arc
+- make -C arj
+- make -C cab
 - make -C cpio
+- make -C rar
 - make -C tar
 - make -C zip
 - .private/update-readme
