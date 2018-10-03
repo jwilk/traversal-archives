@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 BSDTAR = bsdtar
-bsdtar = bsdtar --format=7zip --absolute-paths
+bsdtar = $(BSDTAR) --format=7zip --absolute-paths
 
 ifeq "$(shell command -v $(BSDTAR);)" ""
 $(error bsdtar(1) is needed to create 7zip samples)
