@@ -40,7 +40,7 @@ def main():
             fprint('     ', line)
         fprint()
         for ext in sorted(layout_exts[lname]):
-            line = '  `{fmt} <https://github.com/jwilk/path-traversal-samples/releases/download/0/{layout}.{ext}>`__'
+            line = '  `{fmt} <https://github.com/jwilk/traversal-archives/releases/download/0/{layout}.{ext}>`__'
             line = line.format(layout=lname, ext=ext, fmt=ext_to_fmt[ext])
             fprint(line)
         fprint()
