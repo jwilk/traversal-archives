@@ -141,7 +141,7 @@ The samples helped find the following bugs:
 
 * UnRAR:
 
-  - http://www.openwall.com/lists/oss-security/2017/08/14/3 [CVE-2017-12938]
+  - https://www.openwall.com/lists/oss-security/2017/08/14/3 [CVE-2017-12938]
 
 * Perl (Archive::Tar):
 
