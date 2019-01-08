@@ -133,7 +133,7 @@ The samples helped find the following bugs:
 
 * ARC:
 
-  - https://bugs.debian.org/774527
+  - https://bugs.debian.org/774527 [CVE-2015-9275]
 
 * gcab:
 
