@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 TAR = tar
-tar = $(TAR) -P --owner root --group root --mode a+rX
+tar = $(TAR) -P --owner root --group root --mode u=rwX,go=rX
 
 .PHONY: all
 all:
