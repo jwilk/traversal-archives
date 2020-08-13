@@ -51,7 +51,7 @@ all: relative0.cpio
 relative0.cpio:
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
-	cd tmp && echo ../moo | $(cpio) -o > ../moo.cpio
+	cd ./tmp && echo ../moo | $(cpio) -o > ../moo.cpio
 	rm -rf tmp moo
 	mv moo.cpio $(@)
 
@@ -59,7 +59,7 @@ all: relative2.cpio
 relative2.cpio:
 	mkdir -p -m 755 tmp/tmp
 	umask 022 && echo moo > moo
-	cd tmp && echo tmp/../../moo | $(cpio) -o > ../moo.cpio
+	cd ./tmp && echo tmp/../../moo | $(cpio) -o > ../moo.cpio
 	rm -rf tmp moo
 	mv moo.cpio $(@)
 

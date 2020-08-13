@@ -48,7 +48,7 @@ relative0.zip:
 	rm -f $(@)
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
-	cd tmp && zip -X ../$(@) ../moo
+	cd ./tmp && zip -X ../$(@) ../moo
 	rm -rf tmp moo
 
 all: relative2.zip
@@ -56,7 +56,7 @@ relative2.zip:
 	rm -f $(@)
 	mkdir -p -m 755 tmp/tmp
 	umask 022 && echo moo > moo
-	cd tmp && zip -X ../$(@) tmp/../../moo
+	cd ./tmp && zip -X ../$(@) tmp/../../moo
 	rm -rf tmp moo
 
 all: symlink.zip

@@ -48,7 +48,7 @@ relative0.zoo:
 	rm -f $(@)
 	mkdir -m 755 tmp
 	umask 022 && echo moo > moo
-	cd tmp && zoo a ../$(@) ../moo
+	cd ./tmp && zoo a ../$(@) ../moo
 	rm -rf tmp moo
 
 all: relative2.zoo
@@ -56,7 +56,7 @@ relative2.zoo:
 	rm -f $(@)
 	mkdir -p -m 755 tmp/tmp
 	umask 022 && echo moo > moo
-	cd tmp && zoo a ../$(@) tmp/../../moo
+	cd ./tmp && zoo a ../$(@) tmp/../../moo
 	rm -rf tmp moo
 
 .error = GNU make is required
