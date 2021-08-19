@@ -1,0 +1,55 @@
+name: CI
+on:
+- push
+- pull_request
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: run pydiatra
+      run: |
+        python3 -m pip install --user pydiatra
+        python3 -m pydiatra .
+    - name: run pyflakes
+      run: |
+        python3 -m pip install --user pyflakes
+        python3 -m pyflakes .
+    - name: check README syntax
+      run: |
+        python3 -m pip install --user pygments restructuredtext-lint
+        rst-lint --level=info --encoding=UTF-8 README
+    - name: ensure README is up to date
+      run: |
+        .private/update-readme
+        git diff --exit-code
+    - name: download files referenced in README
+      run: |
+        grep -Po '(?<=<)https:\S+/download/\S+(?=>)' README \
+        | wget -O /dev/null -nv -i -
+    - name: install archivers
+      run: |
+        sudo apt-get install arc arj cpio lcab libarchive-tools rar zip
+    - run: |
+        make -C 7zip
+    - run: |
+        make -C ar
+    - run: |
+        make -C arc
+    - run: |
+        make -C arj
+    - run: |
+        make -C cab
+    - run: |
+        make -C cpio
+    - run: |
+        make -C rar
+    - run: |
+        make -C tar
+    - run: |
+        make -C zip
+    - run: |
+        make -C zoo
+      if: false  # FIXME!
+
+# vim:ts=2 sts=2 sw=2 et
