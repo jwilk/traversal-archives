@@ -29,7 +29,9 @@ jobs:
         | wget -O /dev/null -nv -i -
     - name: install archivers
       run: |
-        sudo apt-get install arc arj cpio lcab libarchive-tools rar zip
+        echo 'deb http://azure.archive.ubuntu.com/ubuntu/ xenial universe' | sudo tee -a /etc/apt/sources.list >/dev/null
+        sudo apt-get update
+        sudo apt-get install arc arj cpio lcab libarchive-tools rar zip zoo
     - run: |
         make -C 7zip
     - run: |
@@ -50,6 +52,5 @@ jobs:
         make -C zip
     - run: |
         make -C zoo
-      if: false  # FIXME!
 
 # vim:ts=2 sts=2 sw=2 et
