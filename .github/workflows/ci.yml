@@ -10,7 +10,7 @@ jobs:
     - name: run pydiatra
       run: |
         python3 -m pip install --user pydiatra
-        python3 -m pydiatra .
+        python3 -m pydiatra -v .
     - name: run pyflakes
       run: |
         python3 -m pip install --user pyflakes
