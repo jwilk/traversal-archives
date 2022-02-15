@@ -30,6 +30,7 @@ jobs:
     - name: install archivers
       run: |
         echo 'deb http://azure.archive.ubuntu.com/ubuntu/ xenial universe' | sudo tee -a /etc/apt/sources.list >/dev/null
+        printf 'Apt::Install-Recommends "false";\n' | sudo tee -a /etc/apt/apt.conf
         sudo apt-get update
         sudo apt-get install arc arj cpio lcab libarchive-tools rar zip zoo
     - run: |
