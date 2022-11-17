@@ -6,7 +6,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: run pydiatra
       run: |
         python3 -m pip install pydiatra
