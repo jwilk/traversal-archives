@@ -29,10 +29,13 @@ jobs:
         | wget -O /dev/null -nv -i -
     - name: install archivers
       run: |
-        echo 'deb http://azure.archive.ubuntu.com/ubuntu/ xenial universe' | sudo tee -a /etc/apt/sources.list >/dev/null
         printf 'Apt::Install-Recommends "false";\n' | sudo tee -a /etc/apt/apt.conf
         sudo apt-get update
-        sudo apt-get install arc arj cpio lcab libarchive-tools rar zip zoo
+        sudo apt-get install arc arj cpio lcab libarchive-tools rar zip
+        wget http://archive.ubuntu.com/ubuntu/pool/universe/z/zoo/zoo_2.10-28_amd64.deb
+        sha256sum -c <<< '953f4f94095ef3813dfd30c8977475c834363aaabce15ab85ac5195e52fd816a  zoo_2.10-28_amd64.deb'
+        sudo apt-get install ./zoo_2.10-28_amd64.deb
+        rm ./zoo_2.10-28_amd64.deb
     - run: |
         make -C 7zip
     - run: |
