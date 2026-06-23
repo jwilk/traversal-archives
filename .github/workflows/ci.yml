@@ -19,7 +19,7 @@ jobs:
     - name: check README syntax
       run: |
         python3 -m pip install restructuredtext-lint pygments
-        rst-lint --level=info --encoding=UTF-8 README
+        rst-lint --level=info README
     - name: ensure README is up to date
       run: |
         .private/update-readme
